@@ -18,7 +18,6 @@ def get_options(df):
 #Load Data
 df = pd.read_csv('data/StockCode.csv', dtype={'Code': object})
 options = get_options(df)
-print(df.info())
 
 # Initialize the app
 app = dash.Dash(__name__)
@@ -34,13 +33,13 @@ app.layout = html.Div([
     Output("my-multi-dynamic-dropdown", "options"),
     Input("my-multi-dynamic-dropdown", "search_value"),
     State("my-multi-dynamic-dropdown", "value")
-
 )
 def update_multi_options(search_value, value):
     if not search_value:
         raise PreventUpdate
     # Make sure that the set values are in the option list, else they will disappear
     # from the shown select list, but still part of the `value`.
+    print(value)
     return [
         o for o in options if search_value in o["label"] or o["value"] in (value or [])
     ]
