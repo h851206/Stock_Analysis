@@ -39,7 +39,6 @@ def update_multi_options(search_value, value):
         raise PreventUpdate
     # Make sure that the set values are in the option list, else they will disappear
     # from the shown select list, but still part of the `value`.
-    print(value)
     return [
         o for o in options if search_value in o["label"] or o["value"] in (value or [])
     ]
