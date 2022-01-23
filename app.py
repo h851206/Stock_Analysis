@@ -66,7 +66,11 @@ def data_upload(n_clicks, value):
     return_text = ""
     for v in value:
         Name = df.loc[df["Local Symbol"]==v, "Description"].squeeze()
-        return_text = return_text + " " + Name +'('+ v + ')' ",\n"
+        return_text = return_text + " " + Name +'('+ v + ')' ","
+
+    # get stock historical data
+    # the time frame is also needed
+    DI.ApiCall(value)
     return return_text[:-1] + " succesfully uploaded!"
 
 
