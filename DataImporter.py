@@ -6,5 +6,7 @@
 # web: https://finmind.github.io/  and  https://twstock.readthedocs.io/zh_TW/latest/prepare.html
 import pandas as pd
 import twstock
-stock = twstock.Stock('2330')
-print(stock.sid)
+
+#TODO: 1.call api and get data 2.store into mongodb 3.return stock value to app
+def Api_call(stock_codes:list)->dict:
+    pass

@@ -7,6 +7,7 @@ import dash_html_components as html
 from dash.exceptions import PreventUpdate
 from dash.dependencies import Input, Output, State
 import pandas as pd
+import DataImporter as DI
 
 
 def get_options(df):
